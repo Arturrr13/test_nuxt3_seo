@@ -1,0 +1,282 @@
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+    background: #1D1D1F;
+    font-family: 'Inter';
+    font-size: 0.833vw;
+    @media screen and (min-width:1921px){
+        font-size: unset;
+    }
+
+    @media screen and (max-width:760px){
+        font-size: 4.0712vw;
+        .s760{
+            display: block;
+        }
+    }
+}
+
+
+a:hover, 
+button:hover{
+    transition: .5s ease;
+    cursor: pointer;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+a, button, .linkHover__style {
+    transition: all .35s ease-in-out;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.section__content, .footer__body{
+    max-width: rem(1220);
+    margin: 0 auto;
+}
+
+.s760{
+    display: none;
+}
+
+.btn__mainStyle{
+    border-radius: rem(12);
+    background: linear-gradient(93deg, #854FDD, #4B6DAE 100%) padding-box, linear-gradient(93deg, #854FDD, #4B6DAE 100%) border-box;
+    border: rem(4) solid transparent;
+    position: relative;
+    overflow: hidden;
+    @include t-16(#FFFFFF);
+    span{
+        z-index: 2;
+    }
+    svg{
+        position: absolute;
+        path{
+            stroke-dashoffset: 5200;
+            stroke-dasharray: 5200;
+        }
+        &:nth-child(2){
+            top: -85%;
+            right: -25%;
+        }
+        &:nth-child(3){
+            top: -50%;
+            left: -25%;
+        }
+
+    }
+    &:hover{
+        background: linear-gradient(#1D1D1F, #1D1D1F) padding-box, linear-gradient(93deg, #854FDD, #4B6DAE 100%) border-box;
+        svg path{
+            animation: btcAnim 2s ease-in-out both;
+        }
+    }
+}
+
+@keyframes btcAnim {
+    0%{
+        stroke-dashoffset: 5200;
+    }
+    100%{
+        stroke-dashoffset: 0;
+    }
+}
+
+.infoTab__style{
+    border-radius: rem(100);
+    background: linear-gradient(93deg, #854FDD 0.68%, #4B6DAE 100%);
+    @include t-14(#FFFFFF)
+}
+
+.more__btn{
+    @include t-16(#FFFFFF);
+    @include flex(false, flex-start, center, false);
+    line-height: rem(12);
+    width: rem(24);
+    height: rem(24);
+    border-radius: 50%;
+    border: rem(1) solid rgba(255, 255, 255, 0.10);
+    &:hover{
+        cursor: pointer;
+        background: rgba(255, 255, 255, 0.03);
+    }
+}
+
+.linkHover__style{
+    @include t-16(#ffffff80);
+    &:hover{
+        cursor: pointer;
+        color: #FFFFFF;
+    }
+}
+
+@media  screen and (max-width:760px){
+    .section__content{
+        max-width: 100%;
+        //padding: 0 rem(16);
+    }
+
+    .infoTab__style{
+        @include t-12(#FFFFFF)
+    }
+}
+
+
+// ---------------------------------- CAROUSEL ---------------------------------------
+
+
+.carousel__pagination-button::after{
+    width: rem(10) !important;
+    height: rem(10) !important;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50% !important;
+}
+
+.carousel__pagination-button--active::after{
+    background: #7573E4 !important
+}
+
+.splide__pagination__page{
+    width: rem(10) !important;
+    height: rem(10) !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-radius: 50% !important;
+}
+
+.splide__pagination__page.is-active {
+    background: #7573E4 !important;
+    transform: scale(1) !important;
+}
+
+
+// ---------------------------------- VIDEO ---------------------------------------
+.video-js, .vjs-poster{
+    background: #1D1D1F !important;
+}
+
+.video-js .vjs-play-progress, .video-js .vjs-volume-level {
+    background-color: #7573E4 !important;
+}
+
+.video-js .vjs-volume-panel {
+    align-items: center;
+}
+
+.video-js .vjs-volume-bar {
+    margin: 0 !important;
+}
+
+.video-js .vjs-volume-control{
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.vjs-volume-bar.vjs-slider-horizontal {
+    width: 5rem !important;
+    height: 0.35rem !important;
+}
+
+.video-js .vjs-volume-level{
+    height: 0.35rem  !important;
+}
+
+.video-js .vjs-control-bar {
+    background-color: transparent !important;
+    height: 4rem !important;
+    align-items: center;
+}
+
+.video-js .vjs-progress-holder{
+    height: rem(4) !important;
+}
+
+.video-js .vjs-tech{
+    object-fit: cover;
+}
+
+.video-js .vjs-big-play-button{
+    border-radius: 50% !important;
+    width: rem(50) !important;
+    height: rem(50) !important;
+    border: rem(1) solid #7573E4 !important;
+    margin-top: -0.81666rem !important;
+    margin-left: -1.5rem !important;
+    font-size: 1.75rem !important;
+    line-height: 3.125rem !important;
+    background: linear-gradient(93deg, #854FDD 0.68%, #4B6DAE 100%) !important;
+}
+
+.video-js .vjs-big-play-button .vjs-icon-placeholder:before {
+    color: #FFFFFF;
+}
+
+.vjs-button > .vjs-icon-placeholder:before {
+    font-size: 1.3rem !important;
+    line-height: 1.8rem !important;
+}
+
+.video-js .vjs-tech{
+    border-radius: rem(12);
+}
+
+.video-js .vjs-slider {
+    border-radius: rem(5);
+    background: rgba(255, 255, 255, 0.10) !important;
+}
+
+.video-js .vjs-play-progress:before {
+    top: rem(1);
+}
+
+.video-js .vjs-play-control, .video-js .vjs-mute-control{
+    border-radius: 50%;
+    border: rem(1) solid rgba(255, 255, 255, 0.10);
+    width: rem(36) !important;
+    height: rem(36) !important;
+}
+
+.video-js .vjs-play-control{
+    margin-right: rem(5);
+}
+
+.video-js .vjs-mute-control.vjs-vol-2 .vjs-icon-placeholder:before, .video-js .vjs-play-control .vjs-icon-placeholder:before {
+    top: rem(4) !important;
+    left: rem(1) !important;
+}
+
+
+// ---------------------------------------- SCROLL ----------------------------------------
+
+
+::-webkit-scrollbar {
+    width: rem(5);
+    position: relative;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 rem(5) #1A1B22; 
+    border-radius: rem(5);
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, rgba(133,79,221,1) 0%, rgba(75,109,174,1) 100%); 
+    border-radius: rem(5);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, rgb(116, 45, 230) 0%, rgb(47, 91, 174) 100%);
+}

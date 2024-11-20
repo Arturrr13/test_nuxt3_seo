@@ -1,0 +1,93 @@
+@use "sass:math";
+@mixin button($bg, $c, $p, $br, $lh, $fs, $fw){
+    background: $bg;
+    color: $c;
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: $lh;
+    padding: $p;
+    border: none;
+    border-radius: $br;
+    outline: none;
+}
+
+@mixin t-12($c){
+    color: $c;
+    font-size: rem(12);
+    font-weight: 400;
+    line-height: 1.25rem
+}
+
+@mixin t-14($c){
+    color: $c;
+    font-size: rem(14);
+    font-weight: 400;
+    line-height: 1.25rem
+}
+
+@mixin t-16($c){
+    color: $c;
+    font-size: rem(16);
+    font-weight: 400;
+    line-height: 1.25rem
+}
+
+@mixin t-20($c){
+    color: $c;
+    font-size: rem(20);
+    font-weight: 400;
+    line-height: 1.1rem
+}
+
+@mixin h3($c){
+    color: $c;
+    font-size: rem(24);
+    font-weight: 400;
+    line-height: 1.2rem;
+    @media  screen and (max-width:760px){
+        font-size: rem(20);
+    }
+}
+
+@mixin h1($lh, $fs, $fw){
+    color: $text-white;
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: $lh;
+}
+
+@mixin btn-1($p){
+    background: linear-gradient(#1D1D1F, #1D1D1F) padding-box, linear-gradient(to right, #854FDD, #4B6DAE) border-box;
+    border-radius: rem(180);
+    border: rem(1) solid transparent;
+    font-size: rem(16);
+    font-weight: 400;
+    line-height: 130%;
+    text-align: center;
+    width: max-content;
+    a{
+        padding: $p;
+        color: #FFF;
+        display: block;
+    }
+
+    @media  screen and (max-width:760px){
+        font-size: rem(14);
+    }
+}
+
+@mixin flex($fd, $ai, $jc, $g){
+    display: flex;
+    @if $fd {
+        flex-direction: $fd;
+    }
+    @if $ai {
+        align-items: $ai;
+    }
+    @if $jc {
+        justify-content: $jc;
+    }
+    @if $g {
+        gap: $g;
+    }
+}
